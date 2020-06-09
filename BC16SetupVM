@@ -16,7 +16,7 @@ Copy-FileFromBCContainer -containerName navserver -containerPath 'C:\Application
 Copy-FileFromBCContainer -containerName navserver -containerPath 'c:\Test Assemblies\Mock Assemblies\MockTest.dll' -localPath 'c:\MockTest.dll'
 Copy-FileToBCContainer -containerName navserver -localPath 'c:\MockTest.dll' -containerPath 'c:\Windows\assembly\MockTest.dll'
 Copy-FileToBCContainer -containerName navserver -localPath 'c:\MockTest.dll' -containerPath 'c:\Program Files\Microsoft Dynamics NAV\160\Service\Add-ins\MockTest.dll'
-
+Restart-BCContainer -containerName navserver
 Publish-NavContainerApp -containerName 'navserver' -appFile 'c:\Microsoft_Any.app' -skipVerification -sync -install
 Publish-NavContainerApp -containerName 'navserver' -appFile 'c:\Microsoft_Library Assert.app' -skipVerification -sync -install
 Publish-NavContainerApp -containerName 'navserver' -appFile 'c:\Microsoft_Test Runner.app' -skipVerification -sync -install
